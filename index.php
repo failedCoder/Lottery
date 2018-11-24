@@ -4,7 +4,8 @@
 
 require_once "bootstrap.php";
 
+use App\Request\Router;
 
-$test = new Request\Router();
+//$router = new Router();
 
-echo $test->test;
+//echo $router->directTo('uri', 'GET');
