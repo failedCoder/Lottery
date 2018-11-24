@@ -1,0 +1,33 @@
+{
+  "name": "lottery",
+  "version": "1.0.0",
+  "description": "Simple lottery app",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/failedCoder/Lottery.git"
+  },
+  "keywords": [
+    "laravel",
+    "php",
+    "javascript",
+    "lottery",
+    "mvc"
+  ],
+  "author": "Petar Coric",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/failedCoder/Lottery/issues"
+  },
+  "homepage": "https://github.com/failedCoder/Lottery#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.1"
+  }
+}
