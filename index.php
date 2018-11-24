@@ -2,5 +2,5 @@
 
 //app entry point
 
-echo "test2";
+require_once "bootstrap.php";
 
