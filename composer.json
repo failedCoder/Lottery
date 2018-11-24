@@ -12,7 +12,11 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "App\\": ""
+            "App\\": "",
+            "App\\Request\\": "requests",
+            "App\\Database\\": "database",
+            "App\\Model\\": "models",
+            "App\\Controller\\": "controllers"
         }
     }
 }
