@@ -15,7 +15,7 @@ class QueryBuilder {
 	}
 
 
-	public function fetchAllFromTable($table, $class = '') {
+	public function fetchAllFromTable ($table, $class = '') {
 	
 		$query = "SELECT * FROM $table";
 
@@ -33,6 +33,13 @@ class QueryBuilder {
 		return $statement->fetchAll(\PDO::FETCH_CLASS);
 	
 	}
+
+	public function insertToTable ($table) {
+	
+		
+	
+	}
+	
 	
 	
 

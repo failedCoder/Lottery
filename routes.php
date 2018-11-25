@@ -1,3 +1,6 @@
 <?php
 
-use App\Request\Router;
+//place for defining routes
+
+$router->get("", "controllers/IndexController.php");
+
