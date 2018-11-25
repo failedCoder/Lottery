@@ -5,3 +5,5 @@
 require_once "vendor/autoload.php";
 
 $config = require_once "config.php";
+
+$dbConnection = App\Database\Connection::make($config['database']);
