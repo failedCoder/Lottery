@@ -12,15 +12,17 @@
 
 					<h1>Odaberite brojeve:</h1>
 
-					<?php for ($i=1; $i <= 46; $i++): ?>
+					<div>
+						<?php for ($i=1; $i <= 46; $i++): ?>
+							
+							<label class="numbers" for="main-number-<?=$i?>"> <?= $i ?> </label>
+
+							<input type="checkbox" name="<?=$i?>" value="<?=$i?>" id="main-number-<?=$i?>">
 						
-						<label class="numbers" for="main-number-<?=$i?>"> <?= $i ?> </label>
+						<?php endfor; ?>
+					</div>
 
-						<input type="checkbox" name="<?=$i?>" value="<?=$i?>" id="main-number-<?=$i?>">
-					
-					<?php endfor; ?>
-
-						<hr>
+					<hr>
 
 					<?php for ($i=1; $i <= 9; $i++): ?>
 						
