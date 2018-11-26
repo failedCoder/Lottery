@@ -14,6 +14,20 @@ $(document).ready(function () {
     	});
     	}
 
+    	function preventFormSubmit (form, condition) {
+    		$(form).on('submit', function(e){
+    			if(condition) {
+    				e.preventDefault();
+    			}
+    		});
+    	}
+
+
     	limitCheckbox('[id^="main-number-"]', 5);
     	limitCheckbox('[id^="bonus-number-"]', 1);
+
+    	var formSubmitCondition = $('input[id^="main-number-"]:checked').length <= 4 || $('input[id^="bonus-number-"]:checked').length !== 1;
+    	preventFormSubmit('form', formSubmitCondition);
+    	
+    	
 });

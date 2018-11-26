@@ -4,3 +4,5 @@
 
 $router->get("", "controllers/IndexController.php");
 
+$router->post("submit", "controllers/SubmitController.php");
+
