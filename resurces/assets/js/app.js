@@ -22,12 +22,14 @@ $(document).ready(function () {
     		});
     	}
 
+      $('.error').delay(3000).fadeOut();
+
 
     	limitCheckbox('[id^="main-number-"]', 5);
     	limitCheckbox('[id^="bonus-number-"]', 1);
 
     	var formSubmitCondition = $('input[id^="main-number-"]:checked').length <= 4 || $('input[id^="bonus-number-"]:checked').length !== 1;
-    	preventFormSubmit('#number-input', formSubmitCondition);
+    	//preventFormSubmit('#number-input', formSubmitCondition);
     	
     	
 });

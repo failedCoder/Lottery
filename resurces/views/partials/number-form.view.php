@@ -1,10 +1,24 @@
-<form action="/submit" method="POST" id="numbers-form" id="number-input">
+<form action="/submit" method="POST" id="number-input">
 
 				<div class="form-wrapper">
 
-					<h1>Odaberite brojeve:</h1>
+					<h1 id="form-h1">Odaberite brojeve:</h1>
 
-					<div>
+					<?php if ($_SESSION['inputError']): ?>
+
+						<span class="error">Morate unjeti 5+1 broj.</span>
+
+						<?php $_SESSION['inputError'] = false ?>
+
+					<?php elseif($_SESSION['noResults']): ?>	
+
+						<span class="error">Potrebni su rezulati izvlačenja.</span>
+
+						<?php $_SESSION['noResults'] = false ?>
+
+					<?php endif; ?>
+
+					<div id="main-input">
 						<?php for ($i=1; $i <= 46; $i++): ?>
 							
 							<label class="numbers" for="main-number-<?=$i?>"> <?= $i ?> </label>
