@@ -2,6 +2,12 @@
 
 use App\Model\GenerateResult;
 
-$generator = new GenerateResult();
+$generator = new GenerateResult($queryBuilder);
 
-var_dump($generator->generateMainNumbers(3, 1, 10));
+$generator->generateMainNumbers(5, 1, 46);
+
+$generator->generateBonusNumber();
+
+$generator->storeTo('izvuceno');
+
+die('done');

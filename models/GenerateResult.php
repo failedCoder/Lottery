@@ -5,9 +5,19 @@ namespace App\Model;
 
 class GenerateResult {
 
+	private $query;
+
 	private $mainNumbers = [];
 
 	private $bonusNumber;	
+
+
+	public function __construct($queryBuilder) {
+	
+		$this->query = $queryBuilder;
+	
+	}
+	
 
 
 	public function generateMainNumbers($counter, $from, $to) {
@@ -28,11 +38,32 @@ class GenerateResult {
 
 	}
 
+	public function generateBonusNumber() {
 
-	public function generateNumber($from, $to) {
+		$this->bonusNumber = $this->generateNumber(1, 9);
+
+	}
+
+
+	private function generateNumber($from, $to) {
 
 		return rand($from, $to);
 
 	}
+
+	public function storeTo($table) {
+	
+		$bonusNumber = $this->bonusNumber;
+
+		sort($this->mainNumbers);
+
+		$numbers = implode(',', $this->mainNumbers);
+
+		$date = date('Y-m-d H:i:s');
+
+		$this->query->insertNumbers($table, $numbers, $bonusNumber, $date);
+	
+	}
+	
 
 }
