@@ -27,7 +27,7 @@ $(document).ready(function () {
     	limitCheckbox('[id^="bonus-number-"]', 1);
 
     	var formSubmitCondition = $('input[id^="main-number-"]:checked').length <= 4 || $('input[id^="bonus-number-"]:checked').length !== 1;
-    	preventFormSubmit('form', formSubmitCondition);
+    	preventFormSubmit('#number-input', formSubmitCondition);
     	
     	
 });

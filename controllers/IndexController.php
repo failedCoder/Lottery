@@ -10,9 +10,4 @@ if ($lastResult) {
 
 }
 
-
-
-
-
-
 require_once "resurces/views/index.view.php";

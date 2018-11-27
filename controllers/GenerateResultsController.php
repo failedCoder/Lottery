@@ -1,6 +1,7 @@
 <?php
 
 use App\Model\GenerateResult;
+use App\Request\Request;
 
 $generator = new GenerateResult($queryBuilder);
 
@@ -10,4 +11,4 @@ $generator->generateBonusNumber();
 
 $generator->storeTo('izvuceno');
 
-die('done');
+Request::redirectTo('/');
