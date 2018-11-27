@@ -18,7 +18,7 @@
 		
 		<div class="col-6 mx-auto">
 			
-			<form method="POST" action="/draw" id="draw-form">
+			<form method="POST" action="/generate" id="draw-form">
 				
 				<button type="submit" class="btn btn-info btn-block">Izvlačenje!</button>
 
@@ -65,7 +65,7 @@
 			<div class="col-2 main-results" id="main-results-bonus">
 				
 				<span class="digit">10</span>
-				
+
 			</div>
 
 
