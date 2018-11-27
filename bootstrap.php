@@ -10,6 +10,8 @@ $config = require_once "config.php";
 
 $dbConnection = App\Database\Connection::make($config['database']);
 
+$queryBuilder = new App\Database\QueryBuilder($dbConnection);
+
 $router = new App\Request\Router();
 
 require_once "routes.php";

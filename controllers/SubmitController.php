@@ -1,12 +1,18 @@
 <?php
 
-$inputNumbers = $_POST;
+use App\Model\UserNumbers;
+use App\Request\Request;
+	
+$userNumbers = new UserNumbers($_POST, $queryBuilder);
 
-if (count($inputNumbers) !== 6) {
-	header('location: /');
+if (!$userNumbers->verify()) {
+	
+	Request::redirectTo('/');
+
 }
 
-$bonusNum = array_pop($inputNumbers);
+$userNumbers->storeTo('odigrano');
 
-$mainNumbers = implode(',', $inputNumbers);
 
+
+die('after');

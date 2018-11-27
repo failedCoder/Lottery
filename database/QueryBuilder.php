@@ -34,8 +34,28 @@ class QueryBuilder {
 	
 	}
 
-	public function insertToTable ($table) {
-	
+	public function insertNumbers ($table, $numbers, $bonusNumber, $date) {
+		
+		try {
+			
+			$query = "INSERT INTO $table (numbers, bonus_number, on_date) VALUES (?, ?, ?)";
+
+			$statement = $this->db->prepare($query);
+
+			$statement->bindParam(1, $numbers);
+
+			$statement->bindParam(2, $bonusNumber);
+
+			$statement->bindParam(3, $date);
+
+			$statement->execute();
+
+
+		} catch (\PDOException $e) {
+			
+			die($e->getMessage());
+
+		}
 		
 	
 	}

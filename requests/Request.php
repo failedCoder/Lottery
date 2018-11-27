@@ -17,14 +17,11 @@ class Request {
 		return $_SERVER["REQUEST_METHOD"];
 
 	}
+	
 
-	public static function redirectTo($uri, $condition = true) {
-
-		if($condition) {
-
+	public static function redirectTo($uri) {
+		
 			header("location: $uri");
-
-		}
 
 	}
 

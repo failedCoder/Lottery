@@ -12,6 +12,12 @@ return [
 
 		'username' => 'root',
 
-		'password' => 'Sejxohem24'
+		'password' => 'Sejxohem24',
+
+		'options' => [
+
+			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+
+		]
 	]
 ];

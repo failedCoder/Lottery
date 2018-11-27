@@ -15,7 +15,7 @@ class Connection {
 		
 					self::$instance = 
 						new \PDO ("mysql:host=" . $config['host'] . ";
-						dbname=" . $config['name'],$config['username'],$config['password']
+						dbname=" . $config['name'],$config['username'],$config['password'],$config['options']
 					);
 		
 			}
