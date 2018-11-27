@@ -18,4 +18,14 @@ class Request {
 
 	}
 
+	public static function redirectTo($uri, $condition = true) {
+
+		if($condition) {
+
+			header("location: $uri");
+
+		}
+
+	}
+
 }

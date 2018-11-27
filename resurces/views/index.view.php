@@ -34,7 +34,7 @@
 
 						<br>
 
-						<button class="btn btn-primary"	type="submit" id="submit-btn">Igraj</button>
+						<button class="btn btn-primary"	type="submit" id="submit-btn">Provjeri</button>
 
 				</div>
 
