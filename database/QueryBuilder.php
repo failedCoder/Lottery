@@ -15,9 +15,9 @@ class QueryBuilder {
 	}
 
 
-	public function fetchAllFromTable ($table, $class = '') {
+	public function fetchAllFromTable ($table, $class = '', $field = 'id', $order = 'asc') {
 	
-		$query = "SELECT * FROM $table";
+		$query = "SELECT * FROM $table ORDER BY $field $order";
 
 		$statement = $this->db->prepare($query);
 

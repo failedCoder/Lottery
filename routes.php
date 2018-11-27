@@ -8,3 +8,5 @@ $router->post("submit", "controllers/SubmitController.php");
 
 $router->post("generate","controllers/GenerateResultsController.php");
 
+$router->get("rezultati", "controllers/ResultsController.php");
+

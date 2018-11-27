@@ -64,6 +64,12 @@ class GenerateResult {
 		$this->query->insertNumbers($table, $numbers, $bonusNumber, $date);
 	
 	}
+
+	public function fetchAllResults($table, $field = 'id', $order = 'asc') {
+
+		return $this->query->fetchAllFromTable($table, '', $field, $order);
+
+	}
 	
 
 }
