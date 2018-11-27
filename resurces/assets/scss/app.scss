@@ -36,10 +36,21 @@ nav {
 
 .digit {
 	font-size: 3em;
-
 }
 
 #result-title {
 	margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 560px) {
+	.digit {
+		font-size: 1.5em;
+	}
+}
+
+@media screen and (max-width: 300px) {
+	.digit {
+		font-size: 1em;
+	}
 }
 
