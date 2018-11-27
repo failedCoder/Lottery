@@ -30,43 +30,32 @@
 
 	<div class="row mx-auto" id="results">
 
-			<div class="col-2 main-results">
 
-				<span class="digit">10</span>
+			<?php if($lastResult): ?>
 
-			</div>
+				<?php foreach($numbers as $number): ?>
 
-			<div class="col-2 main-results">
+					<div class="col-2 main-results">
 
-				<span class="digit">10</span>
+						<span class="digit"><?= $number ?></span>
 
-			</div>
+					</div>
 
-			<div class="col-2 main-results">
+				<?php endforeach; ?>
 
-				<span class="digit">10</span>
-
-			</div>
-
-			<div class="col-2 main-results">
-
-				<span class="digit">10</span>
-
-			</div>
-
-
-			<div class="col-2 main-results">
-
-				<span class="digit">10</span>
-
-			</div>
-
-
-			<div class="col-2 main-results" id="main-results-bonus">
+				<div class="col-2 main-results" id="main-results-bonus">
 				
-				<span class="digit">10</span>
+					<span class="digit"><?= $bonusNumber ?></span>
 
-			</div>
+				</div>
+
+			<?php else: ?>
+
+				<div class="col-12 text-center">
+					<span>Nema izvučenih brojeva!</span>
+				</div>
+
+			<?php endif; ?>	
 
 
 

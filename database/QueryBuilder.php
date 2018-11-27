@@ -15,9 +15,9 @@ class QueryBuilder {
 	}
 
 
-	public function fetchAllFromTable ($table, $class = '', $field = 'id', $order = 'asc') {
+	public function fetchAllFromTable ($table, $class = '', $field = 'id', $order = 'asc', $limit = '') {
 	
-		$query = "SELECT * FROM $table ORDER BY $field $order";
+		$query = "SELECT * FROM $table ORDER BY $field $order $limit";
 
 		$statement = $this->db->prepare($query);
 
@@ -33,6 +33,20 @@ class QueryBuilder {
 		return $statement->fetchAll(\PDO::FETCH_CLASS);
 	
 	}
+	
+
+	public function fetchLastRowFromTable ($table, $field = 'id') {
+	
+		$query = "SELECT * FROM $table ORDER BY $field desc LIMIT 1";
+
+		$statement = $this->db->prepare($query);
+
+		$statement->execute();
+		
+		return $statement->fetchAll(\PDO::FETCH_CLASS);
+	
+	}
+
 
 	public function insertNumbers ($table, $numbers, $bonusNumber, $date) {
 		
