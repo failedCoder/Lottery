@@ -8,6 +8,7 @@ class UserNumbers {
 	private $numbers;
 
 	private $query;
+	
 
 	public function __construct($inputNumbers, $queryBuilder) {
 

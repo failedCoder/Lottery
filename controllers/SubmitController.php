@@ -13,6 +13,4 @@ if (!$userNumbers->verify()) {
 
 $userNumbers->storeTo('odigrano');
 
-
-
-die('after');
+Request::redirectTo('/');
