@@ -11,6 +11,66 @@
 		</div>
 
 	</div>
+
+	<hr>
+
+	<div class="row">
+		
+		<div class="col-6 mx-auto">
+			
+			<form method="POST" action="/draw" id="draw-form">
+				
+				<button type="submit" class="btn btn-info btn-block">Izvlačenje!</button>
+
+			</form>
+
+		</div>
+
+	</div>
+
+	<div class="row mx-auto" id="results">
+
+			<div class="col-2 main-results">
+
+				<span class="digit">10</span>
+
+			</div>
+
+			<div class="col-2 main-results">
+
+				<span class="digit">10</span>
+
+			</div>
+
+			<div class="col-2 main-results">
+
+				<span class="digit">10</span>
+
+			</div>
+
+			<div class="col-2 main-results">
+
+				<span class="digit">10</span>
+
+			</div>
+
+
+			<div class="col-2 main-results">
+
+				<span class="digit">10</span>
+
+			</div>
+
+
+			<div class="col-2 main-results" id="main-results-bonus">
+				
+				<span class="digit">10</span>
+				
+			</div>
+
+
+
+	</div>
 	
 </div>
 

@@ -12,4 +12,30 @@ nav {
 	margin-bottom: 10px;
 }
 
+#draw-form {
+	margin-top: 2rem;
+}
+
+#results {
+	margin-top: 2.5rem;
+	margin-bottom: 4rem;	
+	height: auto;
+	width: 100%;
+	text-align: center;
+}
+
+.main-results {
+	height: 100%;
+	background-color: #ffcccc;
+	border: 2px solid white;
+}
+
+#main-results-bonus {
+	background-color: #ffccff;
+}
+
+.digit {
+	font-size: 3em;
+
+}
 
