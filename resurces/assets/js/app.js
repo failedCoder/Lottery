@@ -1,10 +1,26 @@
 $(document).ready(function () {
 
-	    $( "input" ).checkboxradio({
-      		icon: false
-    	});
+    
+    var inputForm = $('#number-input');
 
-    	function limitCheckbox (elementSelector, limit) {
+    var drawForm = $('#draw-form');
+
+    inputForm.on('submit', function(e) {
+
+      e.preventDefault();
+      
+      validateInputNumbers($(this));
+
+    });
+      
+    function validateInputNumbers (form) {
+      form.parsley({
+              errorsWrapper: '<div class="text-danger text-center py-3 font-weight-bold"></div>',
+              errorTemplate: '<span></span>'
+      }).validate();
+    }  
+   
+    	/*function limitCheckbox (elementSelector, limit) {
     		$(elementSelector).change(function(){
     		if($(this).siblings(':checked').length >= limit) {
        			this.checked = false;
@@ -29,7 +45,29 @@ $(document).ready(function () {
     	limitCheckbox('[id^="bonus-number-"]', 1);
 
     	var formSubmitCondition = $('input[id^="main-number-"]:checked').length <= 4 || $('input[id^="bonus-number-"]:checked').length !== 1;
-    	//preventFormSubmit('#number-input', formSubmitCondition);
+    	//preventFormSubmit('#number-input', formSubmitCondition);*/
     	
-    	
+    	App.init();
 });
+
+function removeInputIcons(element) {
+
+          $(element).checkboxradio({
+            icon: false
+          });
+
+};
+
+var App = function () {
+
+    return {
+
+        init: function () {
+
+            removeInputIcons('input');
+
+        }
+    }
+    
+}();
+

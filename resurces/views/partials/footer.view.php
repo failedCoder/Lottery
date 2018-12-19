@@ -13,6 +13,8 @@
 			  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
 			  crossorigin="anonymous">
 	</script>
+    <!-- Parsley Js -->
+    <script type="text/javascript" src="node_modules/parsleyjs/dist/parsley.min.js"></script>
     <!-- Custom JS -->
     <script type="text/javascript" src="public/js/app.min.js"></script>
   </body>
