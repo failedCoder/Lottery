@@ -9,16 +9,15 @@ $(document).ready(function () {
 
       e.preventDefault();
       
-      validateInputNumbers($(this));
+      if(validateInputNumbers($(this))) {
+
+        console.log('yess');
+
+      }
 
     });
       
-    function validateInputNumbers (form) {
-      form.parsley({
-              errorsWrapper: '<div class="text-danger text-center py-3 font-weight-bold"></div>',
-              errorTemplate: '<span></span>'
-      }).validate();
-    }  
+
    
     	/*function limitCheckbox (elementSelector, limit) {
     		$(elementSelector).change(function(){
@@ -57,6 +56,22 @@ function removeInputIcons(element) {
           });
 
 };
+
+function validateInputNumbers (form) {
+      
+      form.parsley({
+              errorsWrapper: '<div class="text-danger text-center py-3 font-weight-bold"></div>',
+              errorTemplate: '<span></span>'
+      }).validate();
+
+      if(form.parsley().isValid()) {
+
+        return true;
+
+      }
+
+      return false;
+    }  
 
 var App = function () {
 
