@@ -16,7 +16,7 @@
 
 	<div class="row">
 		
-		<div class="col-6 mx-auto">
+		<div class="col-4 mx-auto">
 			
 			<form method="POST" action="/generate" id="draw-form">
 				

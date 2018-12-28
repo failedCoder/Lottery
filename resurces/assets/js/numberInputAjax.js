@@ -40,9 +40,11 @@ var handleNumbersInput = function ()
 
                     form.append(alertBox('success', response.winningNumbers));
 
-                    var selectedArray = $('input:checked').map(function(i,el){return el.value;}).get(); 
+                    var selectedArray = $('input:checked').map(function(i,el){return el.value;}).get();
 
-                    markWinningNumbers(selectedArray);
+                    var bonusNumber = selectedArray.pop(); 
+
+                    markWinningNumbers(selectedArray, bonusNumber);
 
                 } else if (response.verificationFailed) {
 
@@ -100,11 +102,13 @@ function validateInputNumbers (form) {
       return false;
 }
 
-function markWinningNumbers (inputNumbers) {
+//changes the color of results numbers on index page if they are correct
+function markWinningNumbers (inputNumbers, bonusNumber) {
 
-    $.each($('.main-results .digit'), function (i,resultSpan) {
+    //loop through all spans containing result numbers except bonus span
+    $.each($('.main-results:not(#main-results-bonus) .digit'), function (i,resultSpan) {
         
-        var resultNumber = $(resultSpan).html(); 
+        var resultNumber = $(resultSpan).html();
 
         $.each(inputNumbers, function (j,inputNumber) {
 
@@ -117,5 +121,12 @@ function markWinningNumbers (inputNumbers) {
         });
 
     });
+    
+    if(bonusNumber == $('#main-results-bonus .digit').html()) {
 
-} 
+        $('#main-results-bonus').addClass('correct');
+
+    }
+
+}
+
