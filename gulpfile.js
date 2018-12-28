@@ -2,7 +2,8 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
     rename = require('gulp-rename'),
-    uglify = require('gulp-uglify');
+    uglify = require('gulp-uglify'),
+    concat = require('gulp-concat');
     
 // create object with all paths
 var paths = {
@@ -33,15 +34,13 @@ function css(){
   );
 }
 
-// create function for minimizing js
+// create function for minimizing and concatinating js
 function js(){
   return (
     gulp
       .src(paths.js.src)
       .pipe(uglify())
-      .pipe(rename({
-        suffix: '.min'
-      }))
+      .pipe(concat('app.min.js'))
       .pipe(gulp.dest(paths.js.dest))
     );
 }

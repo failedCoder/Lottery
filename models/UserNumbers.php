@@ -8,6 +8,8 @@ class UserNumbers {
 	private $numbers;
 
 	private $query;
+
+	private $totalLimit = 6;
 	
 
 	public function __construct($inputNumbers, $queryBuilder) {
@@ -41,7 +43,7 @@ class UserNumbers {
 
 	public function verify() {
 	
-		if (count($this->numbers) === 6) {
+		if (count($this->numbers) === $this->totalLimit) {
 
 			return true;
 			

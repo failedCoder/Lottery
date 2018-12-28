@@ -1,36 +1,32 @@
 <?php
 
-session_start();
+$userNumbers = new App\Model\UserNumbers($_POST, $queryBuilder);
 
-use App\Model\UserNumbers;
-use App\Request\Request;
-	
-$userNumbers = new UserNumbers($_POST, $queryBuilder);
+$response = ['success' => 'Brojevi uspješno odigrani!'];
 
-$_SESSION['numbers'] = $_POST;
 
 if (!$userNumbers->verify()) {
 	
-	$_SESSION['inputError'] = true;
-
-	Request::redirectTo('/');
-	exit();
-}
-
-
-$lastResult = $queryBuilder->fetchLastRowFromTable('izvuceno', 'on_date');
-
-if (!$lastResult) {
-
-	$_SESSION['noResults'] = true;
-
-	Request::redirectTo('/');
-	exit();
+	$response = ['verificationFailed' => 'Niste unjeli potreban broj znakova!'];
 
 }
 
-$userNumbers->storeTo('odigrano');
+//checking if results exist
+if (!$queryBuilder->fetchLastRowFromTable('izvuceno', 'on_date')) {
 
-$_SESSION['inputError'] = false;
+	$response = ['noResults' => 'Potrebno je izvuci brojeve prije provjere.'];
 
-Request::redirectTo('/');
+}
+
+if ($response['success']) {
+
+	$userNumbers->storeTo('odigrano');
+
+}
+
+//setting response to JSON
+header('Content-type:application/json;charset=utf-8');
+
+//returning JSON response
+echo json_encode($response);
+
