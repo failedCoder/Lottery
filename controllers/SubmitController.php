@@ -17,7 +17,9 @@ if (!$userNumbers->verify()) {
 }
 
 //checking if results exist
-if (!$queryBuilder->fetchLastRowFromTable('izvuceno', 'on_date')) {
+$lastResult = $queryBuilder->fetchLastRowFromTable('izvuceno', 'on_date');
+
+if (!$lastResult) {
 
 	$response = ['noResults' => 'Potrebno je izvuci brojeve prije provjere.'];
 
@@ -30,13 +32,18 @@ if (!$queryBuilder->fetchLastRowFromTable('izvuceno', 'on_date')) {
 
 $userNumbers->storeTo('odigrano');
 
-$response = ['success' => 'Brojevi uspješno odigrani!'];
 
 if($userNumbers->areWinningNumbers()) {
 
 	$response = ['winningNumbers' => "Odigrali ste dobitnu kombinaciju!"];
 
+	echo json_encode($response);
+
+	exit;
+
 }
+
+$response = ['notAwinningTicket' => 'Niste ostvarili dobitak!'];
 
 echo json_encode($response);
 

@@ -2,13 +2,7 @@
 
 				<?php foreach($numbers as $number): ?>
 
-					<?php 
-						$condition = $winningTicket && in_array($number, $numbersInput);
-						$correct = $condition ? 'correct' : '';
-						
-					?>
-
-					<div class="col-2 main-results <?= $correct ?>">
+					<div class="col-2 main-results">
 
 						<span class="digit"><?= $number ?></span>
 
@@ -16,19 +10,11 @@
 
 				<?php endforeach; ?>
 
-				<?php 
-
-					$bonusCondition = $winningTicket && ($bonusInput == $lastResult[0]->bonus_number);
-					$bonusEqual = $bonusCondition ? 'correct' : '';
-				?>
-
-				<div class="col-2 main-results <?= $bonusEqual ?>" id="main-results-bonus">
+				<div class="col-2 main-results" id="main-results-bonus">
 				
 					<span class="digit"><?= $bonusNumber ?></span>
 
 				</div>
-
-				<?php $_SESSION['numbers'] = false;?>
 
 			<?php else: ?>
 
@@ -36,6 +22,4 @@
 					<span>Nema izvučenih brojeva!</span>
 				</div>
 
-			
-
-			<?php endif; ?>	
+<?php endif; ?>	

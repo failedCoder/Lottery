@@ -59,8 +59,6 @@ class UserNumbers {
 	
 		$lastResult = $this->query->fetchLastRowFromTable('izvuceno', 'on_date');
 
-		$bonusInput = $this->getBonusNumber();
-
 		$lastResultArr = explode(',', $lastResult[0]->numbers);
 
 		$matches = count(
@@ -68,6 +66,8 @@ class UserNumbers {
 			array_intersect($this->numbers, $lastResultArr)
 		
 		);
+
+		$bonusInput = $this->getBonusNumber();
 
 		if ($bonusInput == $lastResult[0]->bonus_number) {
 			$matches++;
