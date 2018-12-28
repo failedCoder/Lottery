@@ -31,9 +31,9 @@ var handleNumbersInput = function ()
             data: numbers,
             success: function (response) {
 
-                if(response.success) {
+                if(response.winningNumbers) {
 
-                    form.append(alertBox('success', response.success));
+                    form.append(alertBox('success', response.winningNumbers));
 
                 } else if (response.verificationFailed) {
 
@@ -43,8 +43,11 @@ var handleNumbersInput = function ()
 
                     form.append(alertBox('danger', response.noResults));
 
+                } else if (response.success) {
+
+                    form.append(alertBox('success', response.success));
+                    
                 }
-                
             },
             error: function () {
 

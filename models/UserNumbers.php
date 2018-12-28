@@ -10,6 +10,8 @@ class UserNumbers {
 	private $query;
 
 	private $totalLimit = 6;
+
+	private $winLimit = 3;
 	
 
 	public function __construct($inputNumbers, $queryBuilder) {
@@ -52,6 +54,30 @@ class UserNumbers {
 		return false;
 	
 	}
+
+	public function areWinningNumbers() {
+	
+		$lastResult = $this->query->fetchLastRowFromTable('izvuceno', 'on_date');
+
+		$bonusInput = $this->getBonusNumber();
+
+		$lastResultArr = explode(',', $lastResult[0]->numbers);
+
+		$matches = count(
+
+			array_intersect($this->numbers, $lastResultArr)
+		
+		);
+
+		if ($bonusInput == $lastResult[0]->bonus_number) {
+			$matches++;
+		}
+
+		return $matches >= $this->winLimit ? true : false;
+	
+	}
+	
+	
 	
 	
 
