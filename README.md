@@ -11,7 +11,7 @@ Lottery app that generates 5+1 random numbers, and compares them to the combinat
   <li>Open the project using xampp, php -S localhost:8000 or any other local web server
 <ol>
  
-<h2>Technologies used</h2>
+<h3>Technologies used</h3>
 <ul>
   <li>PHP</li>
   <li>jQuery</li>
