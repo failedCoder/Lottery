@@ -9,9 +9,9 @@ Lottery app that generates 5+1 random numbers, and compares them to the combinat
   <li>Run <strong>composer install</strong> in the terminal</li>
   <li>Run <strong>npm install</strong> in the terminal</li>
   <li>Open the project using xampp, php -S localhost:8000 or any other local web server
-<ol>
+</ol>
  
-<h3>Technologies used</h3>
+<h2>Technologies used</h2>
 <ul>
   <li>PHP</li>
   <li>jQuery</li>
