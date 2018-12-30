@@ -24,6 +24,8 @@ var handleNumbersInput = function ()
 
         var numbers = form.serialize();
 
+        var formId = form.attr('id');
+
         $.ajax({
 
             url: 'submit',
@@ -32,6 +34,8 @@ var handleNumbersInput = function ()
             beforeSend: function () {
 
                 $('.main-results').removeClass('correct');
+
+                $('#' + formId + ' .alert').remove();
 
             },
             success: function (response) {
@@ -70,8 +74,6 @@ var handleNumbersInput = function ()
 
             },
             complete: function () {
-
-                var formId = form.attr('id');
 
                 $('#' + formId + ' .alert').fadeOut(5000);
 
